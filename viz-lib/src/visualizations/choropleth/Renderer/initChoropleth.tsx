@@ -160,7 +160,6 @@ export default function initChoropleth(container: any, onBoundsChange: any) {
               fillOpacity: 0,
               opacity: 0.8,
             },
-            // @ts-expect-error Leaflet supports interactive but @types/leaflet GeoJSONOptions is missing it
             interactive: false,
           } as any).addTo(_map);
         }
