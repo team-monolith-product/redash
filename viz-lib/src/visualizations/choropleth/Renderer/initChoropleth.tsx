@@ -1,13 +1,15 @@
-import { isFunction, isObject, isArray, map } from "lodash";
+import { isFunction, isObject, isArray, isString, map, get } from "lodash";
 import React from "react";
 import ReactDOM from "react-dom";
 import L from "leaflet";
+import axios from "axios";
 import "leaflet/dist/leaflet.css";
 import "leaflet-fullscreen";
 import "leaflet-fullscreen/dist/leaflet.fullscreen.css";
 import { formatSimpleTemplate } from "@/lib/value-format";
 import sanitize from "@/services/sanitize";
 import resizeObserver from "@/services/resizeObserver";
+import { visualizationsSettings } from "@/visualizations/visualizationsSettings";
 import {
   createNumberFormatter,
   createScale,
@@ -144,6 +146,25 @@ export default function initChoropleth(container: any, onBoundsChange: any) {
         prepareLayer({ feature, layer, data, options, limits, colors, formatValue });
       },
     }).addTo(_map);
+
+    // Add province border overlay if configured
+    const overlayUrl = get(visualizationsSettings, `choroplethAvailableMaps.${options.mapType}.overlayUrl`, undefined);
+    if (isString(overlayUrl)) {
+      axios.get(overlayUrl).then(({ data: overlayGeoJson }: any) => {
+        if (isObject(overlayGeoJson)) {
+          L.geoJSON(overlayGeoJson as any, {
+            style: {
+              color: "#333",
+              weight: 2.5,
+              fillColor: "transparent",
+              fillOpacity: 0,
+              opacity: 0.8,
+            },
+            interactive: false,
+          }).addTo(_map);
+        }
+      }).catch(() => {});
+    }
 
     const mapBounds = _choropleth.getBounds();
     const bounds = validateBounds(options.bounds, mapBounds);
