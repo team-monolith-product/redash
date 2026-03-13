@@ -37,7 +37,7 @@ RUN <<EOF
   fi
 EOF
 
-FROM python:3.13-slim-bookworm
+FROM python:3.13-slim-bookworm AS base
 
 EXPOSE 5000
 
@@ -118,3 +118,7 @@ USER redash
 
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
 CMD ["server"]
+
+FROM base AS dev
+
+FROM base AS prd
