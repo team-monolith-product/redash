@@ -2,7 +2,7 @@ name: Build Redash PRD
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
 
