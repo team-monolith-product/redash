@@ -73,7 +73,7 @@ function wrapComponentWithSettings(WrappedComponent) {
           },
         },
         korea_provinces: {
-          name: "South Korea/Provinces",
+          name: "한국/시도",
           url: koreaProvincesDataUrl,
           fieldNames: {
             name: "시도명",
@@ -82,7 +82,7 @@ function wrapComponentWithSettings(WrappedComponent) {
           },
         },
         korea_districts: {
-          name: "South Korea/Districts",
+          name: "한국/시군구",
           url: koreaDistrictsDataUrl,
           overlayUrl: koreaProvincesDataUrl,
           fieldNames: {
@@ -92,87 +92,87 @@ function wrapComponentWithSettings(WrappedComponent) {
           },
         },
         korea_seoul: {
-          name: "South Korea/Seoul",
+          name: "한국/서울",
           url: koreaSeoulDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_busan: {
-          name: "South Korea/Busan",
+          name: "한국/부산",
           url: koreaBusanDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_daegu: {
-          name: "South Korea/Daegu",
+          name: "한국/대구",
           url: koreaDaeguDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_incheon: {
-          name: "South Korea/Incheon",
+          name: "한국/인천",
           url: koreaIncheonDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_gwangju: {
-          name: "South Korea/Gwangju",
+          name: "한국/광주",
           url: koreaGwangjuDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_daejeon: {
-          name: "South Korea/Daejeon",
+          name: "한국/대전",
           url: koreaDaejeonDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_ulsan: {
-          name: "South Korea/Ulsan",
+          name: "한국/울산",
           url: koreaUlsanDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_sejong: {
-          name: "South Korea/Sejong",
+          name: "한국/세종",
           url: koreaSejongDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_gyeonggi: {
-          name: "South Korea/Gyeonggi",
+          name: "한국/경기",
           url: koreaGyeonggiDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_gangwon: {
-          name: "South Korea/Gangwon",
+          name: "한국/강원",
           url: koreaGangwonDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_chungbuk: {
-          name: "South Korea/Chungbuk",
+          name: "한국/충북",
           url: koreaChungbukDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_chungnam: {
-          name: "South Korea/Chungnam",
+          name: "한국/충남",
           url: koreaChungnamDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_jeonbuk: {
-          name: "South Korea/Jeonbuk",
+          name: "한국/전북",
           url: koreaJeonbukDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_jeonnam: {
-          name: "South Korea/Jeonnam",
+          name: "한국/전남",
           url: koreaJeonnamDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_gyeongbuk: {
-          name: "South Korea/Gyeongbuk",
+          name: "한국/경북",
           url: koreaGyeongbukDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_gyeongnam: {
-          name: "South Korea/Gyeongnam",
+          name: "한국/경남",
           url: koreaGyeongnamDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
         korea_jeju: {
-          name: "South Korea/Jeju",
+          name: "한국/제주",
           url: koreaJejuDataUrl,
           fieldNames: { name: "시군구명", name_eng: "District (EN)", code: "행정구역 코드" },
         },
