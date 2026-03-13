@@ -1,0 +1,24 @@
+name: Build Redash PRD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+
+  build:
+    uses: team-monolith-product/tmn-gh-actions/.github/workflows/build_v2.yml@main
+    with:
+      env: prd
+      helmRepository: tmn-infra-helm
+      target: main
+      propertyPath: 'redash.redash.image.tag'
+      updateTargets: |
+        {
+          "aws": {
+            "imageName": "jce-ecr-redash-all-prd",
+            "valueFilePath": ["redash/aws-apne2-prd-service.yaml"]
+          }
+        }
+    secrets:
+      MACHINE_TOKEN: ${{ secrets.MACHINE_TOKEN }}
