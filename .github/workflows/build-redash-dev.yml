@@ -1,0 +1,24 @@
+name: Build Redash DEV
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+
+  build:
+    uses: team-monolith-product/tmn-gh-actions/.github/workflows/build_v2.yml@develop
+    with:
+      env: dev
+      helmRepository: tmn-infra-helm
+      target: develop
+      propertyPath: 'redash.redash.image.tag'
+      updateTargets: |
+        {
+          "aws": {
+            "imageName": "jce-ecr-redash-all-dev",
+            "valueFilePath": ["redash/aws-apne2-dev-service.yaml"]
+          }
+        }
+    secrets:
+      MACHINE_TOKEN: ${{ secrets.MACHINE_TOKEN }}
